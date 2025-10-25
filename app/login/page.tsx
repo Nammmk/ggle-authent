@@ -1,3 +1,4 @@
+"use client";
 import { useState, ChangeEvent, FormEvent } from 'react';
 import { GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@/firebaseClient';
