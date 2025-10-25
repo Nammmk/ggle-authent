@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -12,6 +13,11 @@ export default function Home() {
           height={20}
           priority
         />
+        <h1 className="text-3xl font-bold mb-8">Bienvenue sur l'app de test Google Auth</h1>
+        <div className="flex gap-6">
+          <Link href="/register" className="px-6 py-3 bg-blue-600 rounded text-white font-semibold hover:bg-blue-700 transition">S'inscrire</Link>
+          <Link href="/login" className="px-6 py-3 bg-gray-700 rounded text-white font-semibold hover:bg-gray-800 transition">Se connecter</Link>
+        </div>
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
             To get started, edit the page.tsx file.
