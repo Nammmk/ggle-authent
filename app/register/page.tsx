@@ -57,10 +57,16 @@ export default function Register() {
         lastName: user.displayName?.split(' ')[1] || '',
         dob: '',
         email: user.email,
-      }, { merge: true });
+      }, { merge: true })
+        .then(() => console.log('Firestore user doc created for', user.uid))
+        .catch((firestoreErr) => {
+          console.error('Firestore setDoc error:', firestoreErr);
+          setError('Firestore error: ' + (firestoreErr instanceof Error ? firestoreErr.message : String(firestoreErr)));
+        });
       router.push('/account');
     } catch (err) {
       if (err instanceof Error) setError(err.message);
+      console.error('Google sign-in error:', err);
     }
   };
 
